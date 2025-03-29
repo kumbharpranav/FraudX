@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cross-Origin-Embedder-Policy" content="unsafe-none">
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Frank+Ruhl+Libre:wght@300..900&family=IM+Fell+English:ital@0;1&family=Meow+Script&family=Miltonian+Tattoo&family=Modern+Antiqua&family=Pacifico&family=Playwrite+US+Modern+Guides&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode" />
+
+  
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+
+  <link href="src/index.css" rel="stylesheet">
+
+  <script>
+    addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  const url = new URL(request.url)
+
+  url.hostname = 'fraudx-4b017-default-rtdb.firebaseio.com'
+  
+  const modifiedRequest = new Request(url.toString(), request)
+  const response = await fetch(modifiedRequest)
+  
+
+  const newHeaders = new Headers(response.headers)
+  newHeaders.set('Cross-Origin-Resource-Policy', 'cross-origin')
+  newHeaders.set('Cross-Origin-Embedder-Policy', 'require-corp')
+  
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: newHeaders,
+  })
+}
+
+
+    const firebaseConfig = {
+       
+     };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+
+    function parseJwt(token) {
+      try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        return JSON.parse(atob(base64));
+      } catch (e) {
+        console.error("Error decoding token", e);
+        return null;
+      }
+    }
+
+    function handleCredentialResponse(response) {
+
+      const loginContainer = document.querySelector('.login-container');
+      const loadingDiv = document.createElement('div');
+      loadingDiv.className = 'loading-indicator';
+      loadingDiv.innerHTML = 'Signing in...';
+      loginContainer.appendChild(loadingDiv);
+
+      console.log("Processing Google sign in...");
+      
+      try {
+        if (!response || !response.credential) {
+          throw new Error("Invalid response from Google");
+        }
+
+        const userDetails = parseJwt(response.credential);
+        
+        if (!userDetails || !userDetails.email) {
+          throw new Error("Failed to get user details");
+        }
+
+        const userId = userDetails.email.replace(/[^a-zA-Z0-9]/g, "_");
+        const dbRef = firebase.database().ref("users/" + userId);
+
+        
+        sessionStorage.setItem("email", userDetails.email);
+        sessionStorage.setItem("first_name", userDetails.given_name || "");
+        sessionStorage.setItem("last_name", userDetails.family_name || "");
+        sessionStorage.setItem("profile_pic", userDetails.picture || "");
+
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        dbRef.get().then((snapshot) => {
+          if (!snapshot.exists()) {
+           
+            return dbRef.set({
+              email: userDetails.email,
+              name: userDetails.name || "Unknown",
+              username: userDetails.given_name || "Unknown",
+              registeredAt: new Date().toISOString()
+            });
+          }
+        })
+        .then(() => {
+          loginContainer.removeChild(loadingDiv);
+          
+        
+        
+        })
+        .catch((error) => {
+          console.error("Database error:", error);
+          alert("Sign in failed. Please try again.");
+          window.location.reload();
+        });
+
+      } catch (error) {
+        console.error("Sign in error:", error);
+        alert("Sign in failed. Please try again.");
+       
+        loginContainer.removeChild(loadingDiv);
+      }
+    }
+
+  
+    const style = document.createElement('style');
+    style.textContent = `
+      .loading-indicator {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 9999;
+      }
+    `;
+    document.head.appendChild(style);
+
+    //login
+    document.getElementById("loginBtn").addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const auth = firebase.auth();
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        console.log("Login successful:", userCredential.user);
+        sessionStorage.setItem("email", userDetails.email || "No Email");
+          sessionStorage.setItem("first_name", userDetails.given_name || "Unknown");
+          sessionStorage.setItem("last_name", userDetails.family_name || "Unknown");
+          sessionStorage.setItem("profile_pic", userDetails.picture || "https://via.placeholder.com/150");
+        window.location.href = "home.html"; // Redirect to dashboard
+      })
+      .catch((error) => {
+        if (error.code === "auth/user-not-found") {
+          console.log("User not registered. Redirecting to signup...");
+          window.location.href = "register.html"; // Redirect to signup
+        } else {
+          console.error("Login Error:", error.message);
+        }
+      });
+  });
+
+    window.handleCredentialResponse = handleCredentialResponse;
+  </script>
+</head>
+<body>
+
+  <video autoplay muted loop class="video-bg">
+    <source src="src/mixxit/3d.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="logo">AI Fake News & Scam Detector</div>
+  <div class="content">
+   
+  <div class="login-container">
+    <h1>Login</h1>
+    <p class="error-message" id="error-message"></p> 
+    <form class="login-form" onsubmit="return false;">
+      <input type="text" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button id="loginBtn" type="submit">Sign In</button>
+    </form>
+
+    <div class="divider"><span>or</span></div>
+    <button id="register" onclick="window.location.href='register.html'">Register</button>
+    <div class="divider"><span>or</span></div>
+    <!-- Google Sign-In Button -->
+    <div id="g_id_onload"
+         data-client_id=""
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="rectangular"
+         data-theme="outline"
+         data-text="signin_with"
+         data-size="large">
+    </div>
+  </div></div>
+<script>
+   const errorMessage = document.getElementById("error-message");
+   document.getElementById("loginBtn").addEventListener("click", function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("Email and password are required!");
+        return;
+      }
+
+      const userId = email.replace(/[^a-zA-Z0-9]/g, "_");
+      db.ref("users/" + userId).get().then((snapshot) => {
+        if (snapshot.exists()) {
+          const userData = snapshot.val();
+          if (userData.password === password) {
+            sessionStorage.setItem("email", userData.email);
+            sessionStorage.setItem("username", userData.username);
+            window.location.href = "home.html"; 
+          } else {
+             errorMessage.textContent ="Incorrect password!";
+             errorMessage.style.display = "block";
+          }
+        } else {
+          alert("User not found! Please register.");
+          window.location.href = "register.html";
+        }
+      }).catch((error) => {
+        console.error("Error checking user:", error);
+      });
+    });
+    
+</script>
+</body>
+</html>

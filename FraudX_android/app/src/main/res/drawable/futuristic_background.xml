@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Deep space base - dark gradient with sharp edges -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#000814"
+                android:centerColor="#001440"
+                android:endColor="#000814"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Tech grid pattern - horizontal lines -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:color="#0A2060" android:width="1dp" android:dashWidth="10dp" android:dashGap="15dp" />
+        </shape>
+    </item>
+    
+    <!-- Tech grid pattern - vertical lines -->
+    <item>
+        <rotate android:fromDegrees="90" android:toDegrees="90">
+            <shape android:shape="rectangle">
+                <stroke android:color="#0A2060" android:width="1dp" android:dashWidth="10dp" android:dashGap="25dp" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Sharp angular accent - top right -->
+    <item android:right="0dp" android:top="0dp">
+        <rotate android:fromDegrees="45" android:toDegrees="45">
+            <shape android:shape="rectangle">
+                <solid android:color="#0F3A94" />
+                <size android:width="100dp" android:height="5dp" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Sharp angular accent - bottom left -->
+    <item android:left="0dp" android:bottom="150dp">
+        <rotate android:fromDegrees="-45" android:toDegrees="-45">
+            <shape android:shape="rectangle">
+                <solid android:color="#0F3A94" />
+                <size android:width="100dp" android:height="5dp" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Digital circuit pattern - top -->
+    <item android:top="50dp" android:right="20dp">
+        <shape android:shape="rectangle">
+            <size android:width="150dp" android:height="2dp" />
+            <solid android:color="#0F3A94" />
+        </shape>
+    </item>
+    
+    <!-- Digital circuit pattern - right branch -->
+    <item android:top="50dp" android:right="20dp">
+        <rotate android:fromDegrees="90" android:toDegrees="90">
+            <shape android:shape="rectangle">
+                <size android:width="50dp" android:height="2dp" />
+                <solid android:color="#0F3A94" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Bright star 1 - fixed position -->
+    <item android:left="50dp" android:top="150dp">
+        <shape android:shape="oval">
+            <size android:width="4dp" android:height="4dp" />
+            <solid android:color="#FFFFFF" />
+        </shape>
+    </item>
+    
+    <!-- Bright star 2 - fixed position -->
+    <item android:right="80dp" android:top="200dp">
+        <shape android:shape="oval">
+            <size android:width="3dp" android:height="3dp" />
+            <solid android:color="#FFFFFF" />
+        </shape>
+    </item>
+    
+    <!-- Bright star 3 - fixed position -->
+    <item android:left="200dp" android:top="100dp">
+        <shape android:shape="oval">
+            <size android:width="2dp" android:height="2dp" />
+            <solid android:color="#FFFFFF" />
+        </shape>
+    </item>
+    
+    <!-- Bright star 4 - fixed position -->
+    <item android:right="150dp" android:bottom="300dp">
+        <shape android:shape="oval">
+            <size android:width="3dp" android:height="3dp" />
+            <solid android:color="#FFFFFF" />
+        </shape>
+    </item>
+    
+    <!-- Bright star 5 - fixed position -->
+    <item android:left="30dp" android:bottom="200dp">
+        <shape android:shape="oval">
+            <size android:width="2dp" android:height="2dp" />
+            <solid android:color="#FFFFFF" />
+        </shape>
+    </item>
+    
+    <!-- Distant stars field - static pattern (replaced bitmap with shape) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#05FFFFFF"
+                android:centerColor="#02FFFFFF"
+                android:endColor="#05FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Tech accent glow - top right corner -->
+    <item android:right="0dp" android:top="0dp">
+        <shape android:shape="rectangle">
+            <corners android:bottomLeftRadius="100dp" />
+            <solid android:color="#150F3A94" />
+            <size android:width="100dp" android:height="100dp" />
+        </shape>
+    </item>
+    
+    <!-- Tech accent glow - bottom left corner -->
+    <item android:left="0dp" android:bottom="0dp">
+        <shape android:shape="rectangle">
+            <corners android:topRightRadius="100dp" />
+            <solid android:color="#150F3A94" />
+            <size android:width="100dp" android:height="100dp" />
+        </shape>
+    </item>
+    
+    <!-- Subtle overlay to unify the design -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="90"
+                android:startColor="#00000000"
+                android:centerColor="#10000000"
+                android:endColor="#00000000"
+                android:type="linear" />
+        </shape>
+    </item>
+</layer-list> 

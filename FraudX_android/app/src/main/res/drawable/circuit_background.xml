@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is a temporary placeholder. Replace this with the actual circuit board image -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="270"
+        android:startColor="#000000"
+        android:centerColor="#001133"
+        android:endColor="#000000"
+        android:type="linear" />
+</shape> 

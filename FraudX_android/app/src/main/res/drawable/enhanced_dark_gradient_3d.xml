@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base gradient background - darker and more dramatic -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#000000"
+                android:centerColor="#0A0A0A"
+                android:endColor="#121212" />
+        </shape>
+    </item>
+
+    <!-- 3D Square Element 1 - larger and more prominent -->
+    <item android:right="450dp" android:bottom="600dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="45"
+                android:startColor="#25232f"
+                android:endColor="#15131f" />
+            <size android:width="200dp" android:height="200dp" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+
+    <!-- 3D Square Element 2 - with gradient -->
+    <item android:left="450dp" android:top="50dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#30313e"
+                android:endColor="#20212e" />
+            <size android:width="150dp" android:height="150dp" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+
+    <!-- 3D Square Element 3 - with gradient -->
+    <item android:left="150dp" android:top="400dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="225"
+                android:startColor="#25232f"
+                android:endColor="#15131f" />
+            <size android:width="120dp" android:height="120dp" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Additional elements for more depth -->
+    <item android:left="100dp" android:top="200dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="315"
+                android:startColor="#282838"
+                android:endColor="#181828" />
+            <size android:width="90dp" android:height="90dp" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+
+    <item android:right="150dp" android:bottom="200dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="45"
+                android:startColor="#35354a"
+                android:endColor="#25253a" />
+            <size android:width="110dp" android:height="110dp" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Dark gradient overlay for enhanced depth effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="900dp"
+                android:startColor="#00000000"
+                android:endColor="#60000000" />
+        </shape>
+    </item>
+    
+    <!-- Subtle pattern for texture -->
+    <item android:drawable="@drawable/subtle_square_pattern" />
+</layer-list> 

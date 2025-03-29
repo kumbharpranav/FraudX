@@ -1,0 +1,16 @@
+{
+    "countries": {
+        "India": {
+            "dialCode": "+91",
+            "states": {
+                "Maharashtra": {
+                    "cities": [
+                        "Mumbai",
+                        "Pune",
+                        "Nagpur"
+                    ]
+                }
+            }
+        }
+    }
+}

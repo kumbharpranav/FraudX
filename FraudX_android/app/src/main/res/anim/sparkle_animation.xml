@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    android:repeatCount="infinite"
+    android:repeatMode="restart">
+
+    <!-- Scale animation for cosmic breathing effect -->
+    <scale
+        android:duration="8000"
+        android:fromXScale="0.97"
+        android:fromYScale="0.97"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.03"
+        android:toYScale="1.03" />
+    
+    <!-- Alpha animation for pulsing galaxy effect -->
+    <alpha
+        android:duration="4000"
+        android:fromAlpha="0.7"
+        android:toAlpha="1.0" />
+    
+    <!-- Rotation for slow star-field rotation -->
+    <rotate
+        android:duration="40000"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="360" />
+
+</set> 

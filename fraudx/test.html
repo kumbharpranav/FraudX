@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+  <title>AI Fake News Detector</title>
+  <link href="src/test.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Frank+Ruhl+Libre:wght@300..900&family=IM+Fell+English:ital@0;1&family=Meow+Script&family=Miltonian+Tattoo&family=Modern+Antiqua&family=Pacifico&family=Playwrite+US+Modern+Guides&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dark_mode" />
+      <!-- Load Material Symbols for menu and menu_open icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu_open" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  
+  
+
+</head>
+<body>
+  <script>
+    // Set dark mode as default
+    document.body.classList.add('dark-mode');
+  </script>
+  <div class="menu-container" id="menuContainer">
+    <!-- Main button with menu icon using code point e5d2 -->
+    <button class="main-btn" id="mainBtn">
+      <span id="menuIcon" class="material-symbols-outlined">&#xE5D2;</span>
+    </button>
+    
+    <!-- Collapsible button 1 with home icon using HTML entity for code point E88A -->
+    <button class="collapsible-btn btn1" onclick="window.location.href='home.html'">
+      <span class="material-symbols-outlined">&#xE88A;</span>
+    </button>
+    <!-- Other collapsible buttons -->
+    <button class="collapsible-btn btn2" onclick="window.location.href='test.html'">AI Fake News Detector</button>
+    <button class="collapsible-btn btn3" onclick="window.location.href='scamdetect.html'">AI Scam Detector</button>
+    <button class="collapsible-btn btn4" onclick="window.location.href='account.html'">Account</button>
+    <button id="collapsible-btn btn5" class="collapsible-btn btn5">Log Out</button>
+  </div>
+
+  
+  <div class="messagehead">AI Fake News Detector</div>
+  <button id="toggleMode" onclick="toggleDarkMode()">
+      <span id="toggleIcon" name="dark_mode"  class="material-symbols-outlined">&#xE51C;</span>
+    </button>
+
+    <div id="chat-container" class="chat-container"></div>
+
+    <div class="chat-input">
+      <input type="text" id="query" placeholder="Enter news text or URL to verify..." onkeydown="handleKeyDown(event)" oninput="handleInput(event)" />
+      <div id="color-box" class="color-box"></div>
+      <div id="arrowBtn" class="arrowBtn" onclick="sendMessage()"></div>
+    </div>
+
+    <script src="src/test.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base shape with gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="315"
+                android:startColor="#000000"
+                android:centerColor="#222222"
+                android:endColor="#101010"
+                android:type="linear" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    
+    <!-- Top edge highlight for 3D effect -->
+    <item android:top="1dp" android:left="1dp" android:right="1dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#50FFFFFF"
+                android:centerColor="#10FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:type="linear" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    
+    <!-- Bottom edge shadow for 3D effect -->
+    <item android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="90"
+                android:startColor="#00000000"
+                android:centerColor="#10000000"
+                android:endColor="#30000000"
+                android:type="linear" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    
+    <!-- Subtle shine overlay -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#10FFFFFF"
+                android:centerColor="#05FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:type="linear" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</layer-list> 

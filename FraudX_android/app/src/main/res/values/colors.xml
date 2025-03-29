@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Theme Colors -->
+    <color name="primary">#FF000000</color>
+    <color name="primary_dark">#FF000000</color>
+    <color name="primary_light">#FF333333</color>
+    <color name="accent">#FF4081</color>
+    <color name="surface">#FFFFFF</color>
+    
+    <!-- Basic Colors -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#80000000</color>
+    <color name="light_gray">#EEEEEE</color>
+    <color name="background">#F5F5F5</color>
+    <color name="background_color">#0F172A</color>
+
+    <!-- Material Design Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    
+    <!-- Background Colors -->
+    <color name="dark_background">#121212</color>
+    <color name="background_dark">#121212</color>
+    <color name="background_light">#F5F5F5</color>
+    <color name="background_dark_blue">#0A1929</color>
+    <color name="card_background">#1F2937</color>
+    <color name="navy_blue">#1A1A2E</color>
+    <color name="dark_blue_card">#1F2937</color>
+    <color name="status_verified">#4CAF50</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="error">#B00020</color>
+    <color name="warning">#FFC107</color>
+    <color name="fake_red">#FF3B30</color>
+    <color name="real_green">#34C759</color>
+    
+    <!-- Google Colors -->
+    <color name="google_blue">#4285F4</color>
+    
+    <!-- Message Background Colors -->
+    <color name="user_message_background">#E3F2FD</color>
+    <color name="bot_message_background">#FFFFFF</color>
+    <color name="scam_message_background">#FFEBEE</color>
+    <color name="error_message_background">#FFF3E0</color>
+    
+    <!-- Utility Colors -->
+    <color name="blue">#0000FF</color>
+    <color name="divider">#1FFFFFFF</color>
+    <color name="ripple">#33000000</color>
+    <color name="scrim">#99000000</color>
+
+    <!-- Launcher Icon Background -->
+    <color name="ic_launcher_background">#2B3544</color>
+
+    <color name="dark_surface">#1E1E1E</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="red">#F44336</color>
+
+    <!-- New Colors -->
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#2962FF</color>
+    <color name="colorBackground">#000000</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#03DAC6</color>
+    <color name="colorSecondaryVariant">#018786</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorSurface">#FFFFFF</color>
+
+    <!-- Risk Level Colors -->
+    <color name="risk_high">#FF5252</color>
+    <color name="risk_medium">#FFC107</color>
+    <color name="risk_low">#4CAF50</color>
+    <color name="risk_unknown">#9E9E9E</color>
+    
+    <!-- Tag Background -->
+    <color name="tag_background">#1AFFFFFF</color>
+
+    <color name="status_real">#4CAF50</color>
+    <color name="status_fake">#F44336</color>
+    <color name="status_unknown">#9E9E9E</color>
+
+    <color name="safe_green">#4CAF50</color>
+    <color name="warning_yellow">#FFC107</color>
+    <color name="danger_red">#F44336</color>
+    <color name="info_blue">#2196F3</color>
+    <color name="dark_blue_gradient_start">#000428</color>
+    <color name="dark_blue_gradient_end">#004e92</color>
+    <color name="dark_purple_gradient_start">#0F0C29</color>
+    <color name="dark_purple_gradient_mid">#302B63</color>
+    <color name="dark_purple_gradient_end">#24243e</color>
+    <color name="semi_transparent_white">#33FFFFFF</color>
+
+    <color name="accent_light">#FF80CBC4</color>
+    <color name="primary_text">#FFFFFFFF</color>
+    <color name="secondary_text">#B3FFFFFF</color>
+    <color name="icons">#FFFFFFFF</color>
+</resources>

@@ -1,0 +1,851 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Background Animation */
+body {
+    background: linear-gradient(-45deg, #3b027c, #0e314d, #02103e, #5d1fe4);
+    background-size: 400% 400%;
+    animation: gradientBG 7s ease infinite;
+    color: white;
+   margin-left: 10px;
+   margin-right: 10px;
+}
+
+/* Background Animation Effect */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navigation Bar */
+nav {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-radius: 20px;
+    top: 2%;
+
+}
+#logoutBtn{
+    background: transparent;
+  top: 1px;
+    padding: 1px 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+nav ul, #logoutBtn {
+    list-style: none;
+    display: flex;
+    padding-right: 20px;
+}
+
+nav ul li, #logoutBtn {
+    margin: 0 15px;
+    padding: 10px 20px;
+}
+nav ul li:hover,#logoutBtn:hover {
+    background-color: #00060b6b;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    padding: 15px 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 14px;
+    
+}
+
+nav ul li a:hover, #logoutBtn:hover {
+    color: #ffbb00;
+}
+.menu-container {
+   display: none;
+  }
+@media (max-width: 768px) {
+    nav {
+     display: none;
+    
+    }
+    .menu-container {
+        display:flex;
+        position: fixed;
+        top: 1px;
+        left: 20px;
+        width: 60px;
+        height: auto;
+        z-index: 1000;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      
+      /* Main button style */
+      .main-btn {
+          left: 2%;
+          top: 2%;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #01001efa;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        position: fixed;
+        font-size: 30px;
+        outline: none;
+        transition: transform 0.3s, background 0.3s;
+      }
+      .main-btn:hover {
+        background: #383838;
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+      .main-btn:active {
+        transform: scale(0.95);
+      }
+  
+      /* Collapsible buttons style */
+      .collapsible-btn {
+        width: 150px;
+        height: 50px;
+        border-radius: 3%;
+        background: #01001efa;
+        color: #fff;
+        border: none;
+        position: absolute;
+        top: 15px;
+        left: 5px;
+        opacity: 0;
+        visibility: hidden;
+        
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s ease;
+        display: block;
+      }
+      .collapsible-btn:hover {
+        background: #2b2b2b;
+        
+      }
+      
+     #logoutBtn {
+        width: 150px;
+        height: 50px;
+        display: block;
+        border-radius: 3%;
+        background: #01001efa;
+        color: #fff;
+        border: none;
+        position: absolute;
+        top: 15px;
+        left: 5px;
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s ease;
+     }
+          /* When menu is open, show buttons vertically */
+      .menu-container.open .collapsible-btn {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      /* Vertical positions for each button with adjusted gaps */
+      .btn1 { 
+        transform: translate(0, 80px); /* Decreased from 90px */
+        height: 50px;
+        margin-bottom: 10px; /* Decreased from 20px */
+        text-decoration: none;
+        color: white;
+      }
+      .btn2 { 
+        transform: translate(0, 150px); /* Decreased from 180px */
+        height: 50px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: white;
+      }
+      .btn3 { 
+        transform: translate(0, 220px); /* Decreased from 270px */
+        height: 50px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: white;
+      }
+      .btn4 { 
+        transform: translate(0, 290px); /* Decreased from 360px */
+        height: 50px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: white;
+      }
+      .btn5 { 
+        transform: translate(0, 360px); /* Decreased from 450px */
+        height: 50px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: white;
+      }
+      
+    
+      /* Initially, buttons are hidden */
+      .menu-container:not(.open) .collapsible-btn {
+        transform: translate(0, 0);
+      }
+
+    
+    }
+
+    .error-message {
+        color: red; 
+        font-size: 14px;
+        margin-top: 5px;
+        display: none;
+        margin-bottom: 10px;
+      }
+     #container {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: center;
+        z-index: 1000;
+      }
+     #container h1 {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        color: #2575fc;
+      }
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .login-form input {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      .login-form button {
+        padding: 0.75rem;
+        background: #2575fc;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .login-form button:hover {
+        background: #1a5bb8;
+      }
+
+/* Header */
+header {
+    padding: 100px 20px;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+/* 3D Floating Cubes */
+.cube {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #00c3ff, #0073ff);
+    opacity: 0.8;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateY(45deg);
+    animation: float 6s infinite alternate ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Random Cube Positions */
+.cube:nth-child(1) { top: 10%; left: 20%; animation-duration: 6s; }
+.cube:nth-child(2) { top: 50%; left: 60%; animation-duration: 4s; }
+.cube:nth-child(3) { top: 70%; left: 30%; animation-duration: 5s; }
+.cube:nth-child(4) { top: 20%; left: 80%; animation-duration: 7s; }
+.cube:nth-child(5) { top: 80%; left: 10%; animation-duration: 6s; }
+
+/* Floating Animation */
+@keyframes float {
+    from { transform: translateY(0px) rotateX(45deg) rotateY(45deg); }
+    to { transform: translateY(-30px) rotateX(60deg) rotateY(60deg); }
+}
+
+
+
+#btn1 {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffffdb;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: none;
+    transition: 0.5s ease;
+    user-select: none;
+    margin-left: 10%;
+    margin-bottom: 5px;
+    border: 1px solid;
+  }
+  
+  #btn2 {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffffdb;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid;
+    transition: 0.5s ease;
+    user-select: none;
+    margin-left: 30%;
+
+  }
+#btn1 a, #btn2 a {
+    text-decoration: none;
+    color: #ffffffdb;
+}
+  #btn1:hover,
+  :focus, #btn2:hover,
+  :focus {
+    color: #ffffff;
+    background: #00060b;
+    border: 1px solid #008cff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+      0 0 100px #008cff;
+  }
+  #morenews {
+    padding: 10px 20px;
+    font-size: 30px;
+    margin-top: 50px;
+    justify-self: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+ 
+#headline {
+    justify-self: center;
+    background-color: #00060bb8;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+} 
+
+/* ✅ Results Container */
+#results-container {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: none;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+  
+}
+#resultscontainers {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: none;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+}
+/* ✅ Search Result Card */
+.result {
+    background: transparent;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.086);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* 🔥 3D Hover Effect */
+.result:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 255, 255, 0.5);
+}
+
+/* ✅ Search Result Title */
+.result h2 {
+    font-size: 20px;
+    margin: 0;
+    align-self: center;
+}
+
+/* ✅ Links (Removes Underline & Adds Hover Effect) */
+.result a {
+    text-decoration: none; /* Removes underline */
+    color: whitesmoke;
+    transition: color 0.3s ease;
+}
+
+.result a:hover {
+    box-shadow: #00f7ff; /* Bright cyan on hover */
+}
+
+/* ✅ Description */
+.result p {
+    font-size: 14px;
+    color: #d0d0d0;
+    margin-top: 5px;
+}
+
+/* ✅ Glowing Border Animation */
+.result::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #170274, #0344ea, #032432);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* ✅ Activate Glow on Hover */
+.result:hover::before {
+    opacity: 1;
+}
+
+/* ✅ Loading Text */
+.loading {
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* ✅ Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✅ Apply Fade-In Effect */
+.result {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    
+}
+
+
+.show-more-btn {
+    position: absolute;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-size: 18px;
+    padding: 10px 60px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: bold;
+    margin-left: 2%;
+    
+}
+
+.show-more-btn:hover {
+    background: linear-gradient(45deg, #170274, #0344ea, #032432);
+    transform: scale(1.1);
+    color: whitesmoke;
+    box-shadow: #00f7ff;
+}
+
+/* Add these media queries at the end of your file */
+
+/* For tablets and smaller screens */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 60px 15px;
+        font-size: 16px;
+    }
+
+    #btn1, #btn2 {
+        font-size: 24px;
+        margin-left: 5%;
+    }
+
+    .result h2 {
+        font-size: 18px;
+    }
+
+    .result p {
+        font-size: 13px;
+    }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 480px) {
+    body {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    header {
+        padding: 40px 10px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    #btn1, #btn2 {
+        font-size: 20px;
+        padding: 8px 15px;
+        margin-left: 2%;
+        display: block;
+        width: 96%;
+        margin-bottom: 10px;
+    }
+
+    .result {
+        padding: 10px;
+    }
+
+    .result h2 {
+        font-size: 16px;
+    }
+
+    .result p {
+        font-size: 12px;
+    }
+
+    .show-more-btn {
+        font-size: 16px;
+        padding: 8px 30px;
+        width: 96%;
+        margin-left: 2%;
+    }
+
+    #morenews {
+        font-size: 24px;
+        padding: 8px 15px;
+        margin-top: 30px;
+    }
+
+    /* Adjust cube sizes for mobile */
+    .cube {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* For very small devices */
+@media screen and (max-width: 320px) {
+    #btn1, #btn2 {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+
+    .result h2 {
+        font-size: 14px;
+    }
+
+    .result p {
+        font-size: 11px;
+    }
+
+    #morenews {
+        font-size: 20px;
+    }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1440px) {
+    .result {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #results-container, #resultscontainers {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Fix for container width */
+#container {
+    max-width: 90%;
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Improve button responsiveness */
+@media screen and (max-width: 768px) {
+    .collapsible-btn, #logoutBtn {
+        width: 130px;
+        font-size: 13px;
+    }
+
+    .main-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+/* Update the logout button styling in dropdown */
+.logout-link {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-top: 5px;
+    padding-top: 15px !important;
+    color: #ff4444 !important;
+}
+
+.logout-link:hover {
+    background: rgba(255, 0, 0, 0.1) !important;
+    color: #ff6666 !important;
+}
+
+/* Update dropdown content styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index: 1000;
+    top: 100%;
+    right: 0; /* Change from left: 0 to right: 0 */
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+/* Adjust responsive styles */
+@media screen and (max-width: 768px) {
+    .dropdown-content {
+        position: fixed;
+        width: 200px; /* Set fixed width for mobile */
+        right: 10px; /* Adjust position from right */
+        top: 60px;
+        border-radius: 10px;
+    }
+
+    .logout-link {
+        text-align: center;
+    }
+}
+
+/* Update mobile responsive styles */
+@media screen and (max-width: 768px) {
+  .btn1 { transform: translate(0, 80px); }
+  .btn2 { transform: translate(0, 150px); }
+  .btn3 { transform: translate(0, 220px); }
+  .btn4 { transform: translate(0, 290px); }
+  .btn5 { transform: translate(0, 360px); }
+}
+
+/* Update landscape orientation styles */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .btn1 { transform: translate(70px, 0); }
+  .btn2 { transform: translate(240px, 0); } /* Increased gaps horizontally */
+  .btn3 { transform: translate(410px, 0); }
+  .btn4 { transform: translate(580px, 0); }
+  .btn5 { transform: translate(750px, 0); }
+}
+
+/* Update dark mode styles to include btn5 */
+body.dark-mode .btn5 {
+    background: #ddd;
+    color: rgb(22, 31, 57);
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffbb00;
+}
+
+.logout-link {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 5px;
+    padding-top: 15px !important;
+    color: #ff4444 !important;
+}
+
+.logout-link:hover {
+    background: rgba(255, 0, 0, 0.1) !important;
+    color: #ff6666 !important;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;  
+    position: relative;  /* Add this */
+}
+
+.header-text {
+    flex: 1;
+    text-align: left;  
+    max-width: 70%;  /* Add this */
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 30px; /* Add spacing */
+}
+
+.header-text h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.download-btn {
+    position: absolute;  /* Change this */
+    right: 20px;        /* Add this */
+    top: 50px;  /* Increase this value to move button down */
+    padding: 12px 24px;  /* Slightly larger padding */
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffffdb;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid;
+    transition: 0.5s ease;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-btn .material-symbols-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+.download-btn .material-symbols-outlined:first-child {
+    color: #3DDC84; /* Android brand color */
+    margin-right: 4px;
+}
+
+.download-btn:hover,
+.download-btn:focus {
+    color: #ffffff;
+    background: #00060b;
+    border: 1px solid #008cff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+        0 0 100px #008cff;
+}
+
+/* Add responsive styles for the download button */
+@media screen and (max-width: 768px) {
+    .header-container {
+        padding: 0 10px;
+        margin: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-text {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .download-btn {
+        position: relative;  /* Change for mobile */
+        right: auto;
+        top: auto;
+        margin-top: 20px;
+        align-self: flex-end;  /* Add this */
+    }
+}
+
+
+

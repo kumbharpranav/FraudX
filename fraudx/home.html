@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+    <title>AI Fake News & Scam Detector</title>
+        <link rel="stylesheet" href="src/home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu_open" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=download" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=android" />
+
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">AI Fake News & Scam Detector</div>
+        <ul>
+            <li><a href="#headlines">Top Headlines</a></li>
+            <li><a href="#scams">Top Scams</a></li>
+            <li><a href="https://cybercrime.gov.in/Webform/Accept.aspx">Report</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Services ▼</a>
+                <div class="dropdown-content">
+                    <a href="test.html">AI Fake News Detector</a>
+                    <a href="scamdetect.html">AI Scam Detector</a>
+                    <a href="account.html">Account Settings</a>
+                    <a href="#" id="logoutBtn" class="logout-link">Log Out</a>
+                </div>
+            </li>
+        </ul>
+    </nav>    
+    <div class="menu-container" id="menuContainer">
+    <button class="main-btn" id="mainBtn">
+        <span id="menuIcon" class="material-symbols-outlined">&#xE5D2;</span>
+      </button>
+      <button class="collapsible-btn btn1" onclick="window.location.href='home.html'">
+        <span class="material-symbols-outlined">&#xE88A;</span>
+      </button>
+      <!-- Other collapsible buttons (placeholders) -->
+      <button class="collapsible-btn btn2" onclick="window.location.href='test.html'">AI Fake News Detector</button>
+      <button class="collapsible-btn btn3" onclick="window.location.href='scamdetect.html'">AI Scam Detector</button>
+      <button class="collapsible-btn btn4" onclick="window.location.href='account.html'">Account</button>
+      <button id="collapsible-btn btn5" class="collapsible-btn btn5">Log Out</button>
+    </div>
+  
+    <!-- Hero Section -->
+    <header id="home">
+        <div class="header-container">
+            <div class="header-text">
+                <h1>AI Fake News & Scam Detector</h1>
+                <p>Stay Informed. Stay Safe. With AI.<br> Identify Fake News & Online Scams Instantly.</p>
+            </div>
+            <button id="downloadBtn" class="download-btn">
+                
+                <span class="material-symbols-outlined">android</span>
+                
+                Download APK
+            </button>
+        </div>
+    </header>
+    
+    <button id="btn1"><a href="test.html" > AI Fake News Detector </a></button>
+    <button id="btn2"><a href="scamdetect.html" >AI Scam Detector</a></button><br><br><br><br><br><br>
+    <!-- Top Headlines Section -->
+    <section id="headlines">
+        <h2 id="headline">📰 Top Headlines</h2>
+        <ul id="newsList">
+            <div id="results-container">
+                <p class="loading">Fetching AI-generated results...</p>
+            </div>
+        </ul>
+    </section>
+
+    <!-- Top Scams Section -->
+    <section id="scams">
+        <h2 id="headline">🚨 Top Online Scams</h2>
+        <ul id="scamList">
+            <div id="resultscontainers">
+                <p class="loading">Fetching AI-generated results...</p>
+            </div>
+        </ul>
+    </section>
+    <div id="background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+  
+
+    <script src="src/home.js"></script>
+    <script>
+        // Add this to your existing script
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = 'src/fraudx.apk';
+            link.download = 'FraudX-ScamDetector.apk';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_3d_bg"
+    android:fitsSystemWindows="true">
+    <!-- Floating Squares -->
+    <View
+        android:id="@+id/square1"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/animated_square"
+        android:alpha="0.1"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"/>
+
+    <View
+        android:id="@+id/square2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/animated_square"
+        android:alpha="0.1"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="30dp"/>
+
+    <View
+        android:id="@+id/square3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/animated_square"
+        android:alpha="0.1"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="80dp"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:fitsSystemWindows="true"
+        app:elevation="4dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:navigationIcon="@drawable/white_back_arrow"
+            app:title="@string/scam_detector_title"
+            app:titleTextColor="#FFFFFF"
+            android:fontFamily="sans-serif-medium"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewScams"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingTop="?attr/actionBarSize"
+        android:paddingBottom="140dp"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layoutAnimation="@anim/layout_animation_fall_down"
+        android:theme="@style/SmoothScrollingRecyclerView"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:stackFromEnd="true" />
+
+    <com.fraudx.detector.views.AnimatedBackgroundView
+        android:id="@+id/animatedBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:alpha="0.2"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="#FFFFFF"
+        android:visibility="gone" />
+
+    <com.fraudx.detector.views.TypingIndicatorView
+        android:id="@+id/typingIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="120dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/statusContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#33000000"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:text="@string/analyzing"
+            android:alpha="0.9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/glowing_input_box"
+        android:elevation="16dp"
+        android:layout_margin="24dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Enter suspicious message or URL..."
+            android:textColorHint="#E6FFFFFF"
+            android:textColor="@android:color/white"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minHeight="56dp"
+            android:padding="16dp"
+            android:imeOptions="actionSend"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"/>
+
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_send"
+            android:tint="#FFFFFF"
+            android:contentDescription="Send message" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout> 

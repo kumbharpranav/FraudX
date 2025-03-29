@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">AI Fake News and Scam Detector</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_header_desc">Profile Picture</string>
+    <string name="nav_fake_news">AI Fake News Detector</string>
+    <string name="nav_scam">AI Scam Detector</string>
+    <string name="nav_profile">Profile</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Screen Titles -->
+    <string name="title_detector">AI Detector</string>
+    <string name="title_scams">Scam Detector</string>
+    <string name="title_news">Fake News Detector</string>
+    <string name="title_account">Account</string>
+    <string name="title_scam_detector">Scam Detector</string>
+    <string name="title_fake_news_detector">Fake News Detector</string>
+    <string name="title_headlines">Latest Headlines</string>
+    <string name="title_home">Home</string>
+    <string name="title_scam">Scam Detector</string>
+    <string name="title_fake_news">Fake News Detector</string>
+    <string name="profile_title">Profile</string>
+
+    <!-- Authentication -->
+    <string name="login_btn">Login</string>
+    <string name="register_prompt">Don\'t have an account? Sign up</string>
+    <string name="logout_btn">Logout</string>
+    <string name="signup_btn">Create Account</string>
+
+    <!-- Input Labels -->
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="label_name">Full Name</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="label_scam_input">Enter message or URL to analyze</string>
+
+    <!-- Input Hints -->
+    <string name="hint_username">Username</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Full Name</string>
+    <string name="hint_new_password">New Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_message">Type your message...</string>
+    <string name="hint_news_text">Enter news text or URL...</string>
+    <string name="hint_scam_input">Enter message or URL to analyze</string>
+    <string name="hint_news_input">Enter news text to analyze</string>
+
+    <!-- Validation Messages -->
+    <string name="google_client_id"></string>
+    <string name="google_client_secret"></string>
+    <string name="loading_headlines">Loading Headlines...</string>
+    <string name="loading_scams">Loading Online Scams...</string>
+    <string name="msg_valid_email">Please enter a valid email</string>
+    <string name="msg_valid_password">Password must be at least 6 characters</string>
+    <string name="msg_required">This field is required</string>
+    <string name="msg_password_match">Passwords do not match</string>
+    <string name="msg_name_required">Name is required</string>
+    <string name="msg_login_required">Please log in first</string>
+    <string name="msg_wait">Please wait...</string>
+
+    <!-- Actions -->
+    <string name="action_google_sign_in">Sign in with Google</string>
+    <string name="action_send">Send</string>
+    <string name="action_update">Update</string>
+    <string name="action_delete">Delete Account</string>
+    <string name="action_login">Login</string>
+    <string name="action_register">Don\'t have an account? Sign up</string>
+    <string name="action_logout">Logout</string>
+
+    <!-- Buttons -->
+    <string name="btn_update_details">Update Details</string>
+    <string name="btn_show_more">Show More</string>
+    <string name="btn_show_more_scams">View More Scams</string>
+    <string name="btn_register">Create Account</string>
+
+    <!-- Labels -->
+    <string name="account_details">Account Details</string>
+    <string name="user_name">User Name</string>
+    <string name="user_email">Email</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="menu">Menu</string>
+
+    <!-- Status Messages -->
+    <string name="status_success">Success</string>
+    <string name="status_error">Error</string>
+    <string name="status_updated">Profile updated successfully</string>
+    <string name="status_safe">SAFE</string>
+    <string name="status_scam">SCAM</string>
+    <string name="status_fake">FAKE</string>
+    <string name="status_real">REAL</string>
+
+    <!-- Error Messages -->
+    <string name="error_name_required">Name is required</string>
+    <string name="error_user_not_found">User not found</string>
+    <string name="error_update">Failed to update</string>
+    <string name="error_passwords_dont_match">Passwords do not match</string>
+    
+    <!-- Success Messages -->
+    <string name="success_update">Successfully updated</string>
+
+    <string name="report_scam">Report Scam</string>
+    <string name="api_error">Sorry, there was an error connecting to the service</string>
+    <string name="processing_error">Sorry, there was an error processing your message</string>
+    <string name="analyzing">Analyzing...</string>
+    <string name="ready_for_analysis">Ready for analysis</string>
+    <string name="detection_error">Detection Error</string>
+    <string name="scam_detector_title">AI Scam Detector</string>
+    <string name="fake_news_detector_title">AI Fake News Detector</string>
+</resources>

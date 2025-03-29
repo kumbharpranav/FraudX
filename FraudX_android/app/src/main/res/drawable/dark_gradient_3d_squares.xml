@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base black background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#000000" />
+        </shape>
+    </item>
+
+    <!-- Subtle gradient overlay -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#20FFFFFF"
+                android:endColor="#00000000"
+                android:centerX="0.5"
+                android:centerY="0.5" />
+        </shape>
+    </item>
+
+    <!-- Grid pattern -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="45"
+                android:startColor="#10FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:centerX="0.5"
+                android:centerY="0.5" />
+        </shape>
+    </item>
+    
+    <!-- 3D grid effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="1000dp"
+                android:startColor="#10FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:centerX="0.5"
+                android:centerY="0.5" />
+        </shape>
+    </item>
+    
+    <!-- Subtle light effect at top -->
+    <item android:top="-500dp" android:left="0dp" android:right="0dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="600dp" 
+                android:startColor="#20FFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+
+    <!-- Dark gradient overlay for depth -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="800dp"
+                android:startColor="#00000000"
+                android:endColor="#40000000" />
+        </shape>
+    </item>
+</layer-list>

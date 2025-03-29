@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Dot pattern grid -->
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M10,10m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"/>
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M50,10m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"/>
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M90,10m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"/>
+
+    <!-- Connecting lines with glowing effect -->
+    <path
+        android:strokeColor="#20FFFFFF"
+        android:strokeWidth="1"
+        android:strokeLineCap="round"
+        android:pathData="M10,10 L50,10 L90,10"/>
+    <path
+        android:strokeColor="#20FFFFFF"
+        android:strokeWidth="1"
+        android:strokeLineCap="round"
+        android:pathData="M10,10 L10,50 L10,90"/>
+
+    <!-- More dots at 50px intervals -->
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M10,50m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"/>
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M50,50m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"/>
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M90,50m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"/>
+</vector>

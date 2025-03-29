@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/typing_indicator_background"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/dot1"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/typing_indicator_dot" />
+
+    <ImageView
+        android:id="@+id/dot2"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/typing_indicator_dot" />
+
+    <ImageView
+        android:id="@+id/dot3"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/typing_indicator_dot" />
+
+</LinearLayout> 

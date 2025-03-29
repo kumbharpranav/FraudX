@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#424242"
+                android:endColor="#212121"
+                android:angle="45" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <!-- Inner background with padding (creating border effect) -->
+    <item android:left="3dp" android:top="3dp" android:right="3dp" android:bottom="3dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#616161"
+                android:endColor="#424242"
+                android:angle="45" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+</layer-list> 

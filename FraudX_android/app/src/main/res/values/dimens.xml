@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Standard dimensions -->
+    <dimen name="button_height">80dp</dimen>
+    <dimen name="button_margin">16dp</dimen>
+    <dimen name="button_radius">16dp</dimen>
+    <dimen name="text_size_title">44sp</dimen>
+    <dimen name="text_size_subtitle">16sp</dimen>
+    <dimen name="text_size_button">20sp</dimen>
+    <dimen name="standard_padding">16dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    
+    <!-- System dimensions -->
+    <dimen name="status_bar_height">32dp</dimen>
+    <dimen name="navigation_bar_height">48dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
+    
+    <!-- System window insets -->
+    <dimen name="status_bar_padding">24dp</dimen>
+    <dimen name="navigation_bar_padding">16dp</dimen>
+    <dimen name="window_inset_top">32dp</dimen>
+    <dimen name="window_inset_bottom">16dp</dimen>
+    <dimen name="window_inset_left">16dp</dimen>
+    <dimen name="window_inset_right">16dp</dimen>
+    
+    <!-- System insets -->
+    <dimen name="status_bar_margin">0dp</dimen>
+    <dimen name="nav_bar_margin">0dp</dimen>
+    <dimen name="content_margin">16dp</dimen>
+    
+    <!-- Edge insets -->
+    <dimen name="edge_inset_horizontal">16dp</dimen>
+    <dimen name="edge_inset_vertical">16dp</dimen>
+    
+    <!-- Device compatibility dimensions -->
+    <dimen name="device_min_width">320dp</dimen>
+    <dimen name="device_max_width">840dp</dimen>
+    <dimen name="content_margin_horizontal">16dp</dimen>
+    <dimen name="content_margin_vertical">16dp</dimen>
+    <dimen name="status_bar_padding_default">16dp</dimen>
+    <dimen name="nav_bar_padding_default">16dp</dimen>
+    
+    <!-- Adjustable text sizes -->
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    
+    <!-- New dimensions -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="message_spacing">8dp</dimen>
+    <dimen name="chat_bottom_padding">120dp</dimen>
+</resources>

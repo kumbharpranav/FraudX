@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dark_gradient_3d_squares"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.news.FakeNewsFragment">
+
+    <!-- Floating Squares -->
+    <View
+        android:id="@+id/square1"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/animated_square"
+        android:alpha="0.1"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"/>
+
+    <View
+        android:id="@+id/square2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/animated_square"
+        android:alpha="0.1"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="30dp"/>
+
+    <View
+        android:id="@+id/square3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/animated_square"
+        android:alpha="0.1"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="80dp"/>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="AI Fake News Detector"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewNews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="80dp"
+        android:paddingBottom="80dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.fraudx.detector.views.TypingIndicatorView
+        android:id="@+id/typingIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="80dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/glowing_input_box"
+        android:elevation="16dp"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Enter news text or URL..."
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:minHeight="40dp"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="#80FFFFFF" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/sendNewsButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="8dp"
+            android:contentDescription="Send"
+            android:src="@drawable/ic_send"
+            app:backgroundTint="@color/black"
+            app:fabCustomSize="40dp"
+            app:maxImageSize="20dp"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout> 

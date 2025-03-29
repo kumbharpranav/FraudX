@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Deep space black gradient base -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#050510"
+                android:centerColor="#080818"
+                android:endColor="#030308"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Nebula haze effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#10170238"
+                android:centerColor="#0A301b70"
+                android:endColor="#10170238"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- First major radial glow - rich purple -->
+    <item android:top="-150dp" android:left="50dp">
+        <shape android:shape="oval">
+            <gradient
+                android:centerX="0.3"
+                android:centerY="0.3"
+                android:gradientRadius="500dp"
+                android:startColor="#30651FFF"
+                android:endColor="#00000000"
+                android:type="radial" />
+        </shape>
+    </item>
+    
+    <!-- Second major radial glow - deep blue -->
+    <item android:top="100dp" android:right="-200dp">
+        <shape android:shape="oval">
+            <gradient
+                android:centerX="0.7"
+                android:centerY="0.5"
+                android:gradientRadius="550dp"
+                android:startColor="#303D5AFE"
+                android:endColor="#00000000"
+                android:type="radial" />
+        </shape>
+    </item>
+    
+    <!-- Third major radial glow - teal accent -->
+    <item android:bottom="-150dp" android:left="-100dp">
+        <shape android:shape="oval">
+            <gradient
+                android:centerX="0.4"
+                android:centerY="0.8"
+                android:gradientRadius="450dp"
+                android:startColor="#3000E5FF"
+                android:endColor="#00000000"
+                android:type="radial" />
+        </shape>
+    </item>
+    
+    <!-- Comet trail effect - diagonal streak -->
+    <item>
+        <rotate android:fromDegrees="35" android:toDegrees="35">
+            <shape android:shape="rectangle">
+                <gradient
+                    android:angle="0"
+                    android:startColor="#00FFFFFF"
+                    android:centerColor="#18FFFFFF"
+                    android:endColor="#00FFFFFF"
+                    android:centerX="0.6"
+                    android:centerY="0.4"
+                    android:type="linear" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Comet trail effect - second diagonal streak -->
+    <item>
+        <rotate android:fromDegrees="-55" android:toDegrees="-55">
+            <shape android:shape="rectangle">
+                <gradient
+                    android:angle="0"
+                    android:startColor="#00FFFFFF"
+                    android:centerColor="#12FFFFFF"
+                    android:endColor="#00FFFFFF"
+                    android:centerX="0.4"
+                    android:centerY="0.6"
+                    android:type="linear" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Primary starfield layer - bright sparkles (FIXED: replaced bitmap with shape) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#15FFFFFF"
+                android:centerColor="#05FFFFFF"
+                android:endColor="#15FFFFFF"
+                android:type="sweep" />
+        </shape>
+    </item>
+    
+    <!-- Bright twinkling stars layer -->
+    <item>
+        <rotate android:fromDegrees="15" android:toDegrees="15">
+            <shape android:shape="rectangle">
+                <gradient
+                    android:startColor="#00FFFFFF"
+                    android:centerColor="#25FFFFFF"
+                    android:endColor="#00FFFFFF"
+                    android:angle="225"
+                    android:type="sweep" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Distant star cluster effect -->
+    <item>
+        <rotate android:fromDegrees="-15" android:toDegrees="-15">
+            <shape android:shape="rectangle">
+                <gradient
+                    android:startColor="#00FFFFFF"
+                    android:centerColor="#15FFFFFF"
+                    android:endColor="#00FFFFFF"
+                    android:angle="135"
+                    android:type="sweep" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Cosmic dust particle effect - tiny dots -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="70"
+                android:startColor="#08FFFFFF"
+                android:centerColor="#02FFFFFF"
+                android:endColor="#08FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Shooting star streak effect 1 -->
+    <item>
+        <rotate android:fromDegrees="25" android:toDegrees="25">
+            <shape>
+                <size android:width="2dp" android:height="10dp" />
+                <gradient
+                    android:startColor="#00FFFFFF"
+                    android:centerColor="#40FFFFFF"
+                    android:endColor="#00FFFFFF"
+                    android:angle="90"
+                    android:type="linear" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Shooting star streak effect 2 -->
+    <item android:top="300dp" android:left="100dp">
+        <rotate android:fromDegrees="-35" android:toDegrees="-35">
+            <shape>
+                <size android:width="2dp" android:height="15dp" />
+                <gradient
+                    android:startColor="#00FFFFFF"
+                    android:centerColor="#60FFFFFF"
+                    android:endColor="#00FFFFFF"
+                    android:angle="90"
+                    android:type="linear" />
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Northern lights effect - subtle wave -->
+    <item android:bottom="-250dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#0538FFD6"
+                android:centerColor="#0566FFAD"
+                android:endColor="#0538FFD6"
+                android:angle="0"
+                android:type="sweep" />
+        </shape>
+    </item>
+    
+    <!-- Magical shimmer effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#08FFFFFF"
+                android:centerColor="#00FFFFFF"
+                android:endColor="#08FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Ultra-fine sparkle dust layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#04FFFFFF"
+                android:centerColor="#0AFFFFFF"
+                android:endColor="#04FFFFFF"
+                android:type="sweep" />
+        </shape>
+    </item>
+    
+    <!-- Subtle ethereal glow to tie everything together -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="90"
+                android:startColor="#05FFFFFF"
+                android:centerColor="#02FFFFFF"
+                android:endColor="#05FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+</layer-list> 

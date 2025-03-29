@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base gradient background -->
+    <item>
+        <shape>
+            <gradient
+                android:angle="225"
+                android:type="linear"
+                android:startColor="#181933"
+                android:centerColor="#242858"
+                android:endColor="#392F6B"
+                android:centerX="0.5"
+                android:centerY="0.5" />
+        </shape>
+    </item>
+    
+    <!-- Radial overlay for additional depth -->
+    <item>
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="900dp"
+                android:startColor="#33392F6B"
+                android:endColor="#00181933"
+                android:centerX="0.5"
+                android:centerY="0.7" />
+        </shape>
+    </item>
+    
+    <!-- Additional overlay to create top light effect -->
+    <item>
+        <shape>
+            <gradient
+                android:angle="90"
+                android:type="linear"
+                android:startColor="#00242858"
+                android:centerColor="#22303B85"
+                android:endColor="#00242858"
+                android:centerX="0.5"
+                android:centerY="0.2" />
+        </shape>
+    </item>
+</layer-list> 

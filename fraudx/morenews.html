@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+    <title>More Search Results</title>
+    <link rel="stylesheet" href="src/home.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu_open" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+
+</head>
+<body>
+    <nav>
+        <div class="logo">AI Fake News & Scam Detector</div>
+        <ul>
+            <li><a href="#headlines">Top Headlines</a></li>
+            <li><a href="#scams">Top Scams</a></li>
+            <li><a href="https://cybercrime.gov.in/Webform/Accept.aspx">Report</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Services ▼</a>
+                <div class="dropdown-content">
+                    <a href="test.html">AI Fake News Detector</a>
+                    <a href="scamdetect.html">AI Scam Detector</a>
+                    <a href="account.html">Account Settings</a>
+                    <a href="#" id="logoutBtn" class="logout-link">Log Out</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Mobile menu container -->
+    <div class="menu-container" id="menuContainer">
+        <button class="main-btn" id="mainBtn">
+            <span id="menuIcon" class="material-symbols-outlined">&#xE5D2;</span>
+        </button>
+        <button class="collapsible-btn btn1" onclick="window.location.href='home.html'">
+            <span class="material-symbols-outlined">&#xE88A;</span>
+        </button>
+        <button class="collapsible-btn btn2" onclick="window.location.href='test.html'">AI Fake News Detector</button>
+        <button class="collapsible-btn btn3" onclick="window.location.href='scamdetect.html'">AI Scam Detector</button>
+        <button class="collapsible-btn btn4" onclick="window.location.href='account.html'">Account</button>
+        <button id="collapsible-btn btn5" class="collapsible-btn btn4">Log Out</button>
+    </div>
+    <br><br>     <br><br> 
+    <div id="background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+    <section id="moreheadlines">
+    <div class="container">
+        <h1 id="morenews">🔍 More Search Results</h1>
+        <div id="results-container">
+            <p class="loading">Fetching more search results...</p>
+        </div>
+    </div>
+</section>
+    <script>
+const API_KEYS = [
+
+];
+
+let currentKeyIndex = 0;
+
+
+function getNextApiKey() {
+    currentKeyIndex = (currentKeyIndex + 1) % API_KEYS.length;
+    return API_KEYS[currentKeyIndex];
+}
+// ✅ Fetch Google Search Results
+async function fetchSearchResults() {
+    let apiKey = API_KEYS[currentKeyIndex];
+    const query = "Today's headlines India";  
+    let apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx==${encodeURIComponent(query)}`;
+
+    try {
+        const response = await fetch(apiUrl);
+        const jsonResponse = await response.json();
+
+        // ✅ If quota exceeded, switch API key and retry
+        if (jsonResponse.error && jsonResponse.error.code === 429) {
+            console.warn("🔄 Quota exceeded, switching API key...");
+            apiKey = getNextApiKey();
+            apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx==${encodeURIComponent(query)}`;
+            return fetchSearchResults(); // Retry with new key
+        }
+
+        console.log("✅ API Response:", jsonResponse);
+
+        if (!jsonResponse.items || jsonResponse.items.length === 0) {
+            document.getElementById("results-container").innerHTML = `<p>No results found.</p>`;
+            return;
+        }
+
+        const resultsContainer = document.getElementById("results-container");
+        resultsContainer.innerHTML = "";
+        jsonResponse.items.forEach(item => {
+            resultsContainer.innerHTML += `
+                <div class="result">
+                    <h2><a href="${item.link}" target="_blank">${item.title}</a></h2>
+                   <p>${item.htmlSnippet} </p>
+                </div>
+            `;
+        });
+
+    } catch (error) {
+        console.error("❌ Error fetching search results:", error);
+    }
+}
+
+// ✅ Auto-fetch results when page loads
+window.onload = fetchSearchResults;
+function logout() {
+    if (confirm("Are you sure you want to log out?")) {
+        sessionStorage.clear();
+        localStorage.clear();
+        window.location.href = "index.html";
+    }
+}
+
+    const mainBtn = document.getElementById('mainBtn');
+    const menuContainer = document.getElementById('menuContainer');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mainBtn.addEventListener('click', () => {
+        menuContainer.classList.toggle('open');
+        
+        // Toggle icon between menu (closed) and menu_open (open)
+        if (menuContainer.classList.contains('open')) {
+            menuIcon.innerHTML = "&#xE9BD;";
+        } else {
+            menuIcon.innerHTML = "&#xE5D2;";
+        }
+    });
+
+    function logout() {
+        if (confirm("Are you sure you want to log out?")) {
+            sessionStorage.clear();
+            localStorage.clear();
+            window.location.href = "index.html";
+        }
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", logout);
+    document.getElementById("collapsible-btn btn4").addEventListener("click", logout);
+
+document.getElementById("logoutBtn").addEventListener("click", logout);
+
+    </script>
+</body>
+</html>

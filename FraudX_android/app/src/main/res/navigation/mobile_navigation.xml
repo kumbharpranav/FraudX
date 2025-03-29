@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.fraudx.detector.ui.home.HomeFragment"
+        android:label="@string/title_home" />
+
+    <fragment
+        android:id="@+id/navigation_fake_news"
+        android:name="com.fraudx.detector.ui.news.FakeNewsFragment"
+        android:label="@string/title_fake_news" />
+
+    <fragment
+        android:id="@+id/navigation_scam"
+        android:name="com.fraudx.detector.ui.scam.ScamFragment"
+        android:label="@string/title_scam" />
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.fraudx.detector.ui.account.AccountFragment"
+        android:label="@string/title_account" />
+
+    <fragment
+        android:id="@+id/your_start_destination_id"
+        android:name="com.fraudx.detector.YourStartFragment"
+        android:label="Your Start Fragment"
+        tools:layout="@layout/fragment_your_start" />
+
+</navigation>

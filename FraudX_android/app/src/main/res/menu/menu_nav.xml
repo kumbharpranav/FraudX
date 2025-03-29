@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_fake_news"
+            android:icon="@drawable/ic_news"
+            android:title="@string/nav_fake_news" />
+        <item
+            android:id="@+id/nav_scam_detector"
+            android:icon="@drawable/ic_warning"
+            android:title="@string/nav_scam" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_person"
+            android:title="@string/nav_profile" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="@string/action_logout" />
+        </menu>
+    </item>
+</menu> 

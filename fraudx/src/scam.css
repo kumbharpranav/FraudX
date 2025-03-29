@@ -1,0 +1,682 @@
+/* Material Symbols style */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    padding-bottom: 10px;
+}
+
+/* Toggle Button */
+#toggleMode {
+  position: fixed;      /* fixed position so it stays visible */
+  top: 20px;            /* adjust as needed */
+  right: 20px;          /* transparent background */
+  background-color: #ffffff00; /* transparent background */
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1000;        /* make sure it's on top */
+}
+
+/* Report Button Styling */
+.report-button {
+  border: 2px solid #333;
+  background: transparent;
+  color: #ff0000;
+  padding: 6px 12px;
+  left: 1%;
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+  margin-left: 10px;
+}
+
+.report-button:hover {
+  background: #fc0000;
+  color: #fff;
+}
+
+/* Color Box styling */
+.color-box {
+  width: 20px;
+  height: 20px;
+  background-color: #00ff00;  /* Adjust the color as needed */
+  border-radius: 4px;         /* Rounded corners */
+  display: none;              /* Initially hidden; you can show it on input if needed */
+  margin-left: 10px;
+}
+
+/* Arrow Button styling */
+.arrowBtn {
+  width: 50px;
+  height: 40px;
+  background-color: peachpuff;
+  border-radius: 50%;         /* Fully circular */
+  display: none;              /* Initially hidden until needed (for example, when user types) */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  position: relative;         /* For proper positioning of the pseudo-element */
+}
+
+/* Arrow icon inside the arrowBtn using a pseudo-element */
+.arrowBtn::before {
+  content: '\2191';           /* Unicode arrow (↑) */
+  font-size: 20px;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Base Styles for Light Mode */
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #f9f5f2, #fdeedc);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Headline Message */
+.messagehead {
+  font-size: 280%;
+  font-weight: bold;
+  color: black;
+  margin-top: 1px;
+  text-align: center;
+  padding-right: 30px;
+  font-family: "Big Shoulders Stencil", sans-serif;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  margin: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 1px;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Message Headline */
+.message {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Playwrite US Modern Guides", serif;
+}
+
+/* Chat Container */
+.chat-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 88vh;
+  overflow-y: auto;
+  justify-content: flex-start;
+  border-radius: 8px;
+  margin-top: 2%;
+  margin-bottom: 3;
+}
+.chat-input:hover{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.584);
+}
+
+/* Chat Input Area */
+.chat-input {
+  position: fixed;
+  bottom: 20px;
+  background: white;
+  padding: 10px;
+  display: flex;
+ 
+  border-radius: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  max-width: 600px;
+  font-family: "IM Fell English", serif;
+}
+.chat-input input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  font-family: "IM Fell English", serif;
+}
+
+/* Chat Messages */
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 60%;      /* Adjust width as needed */
+  word-wrap: break-word;
+  font-family: "Modern Antiqua", serif;
+}
+.message.sent {
+  align-self: flex-end;
+  background: peachpuff;
+  animation: fadeInuser 0.3s ease forwards;
+  font-size: large;
+}
+.message.received {
+  align-self: flex-start;
+  animation: fadeIn 1s ease forwards;
+  font-size: x-large;
+  text-align: start;
+  display: block;
+}
+
+/* Loading Animation */
+.loading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.loading span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #998d8d;
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: blink 1.5s infinite ease-in-out;
+}
+.loading span:nth-child(2) { animation-delay: 0.2s; }
+.loading span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+/* Date Timeline */
+.date-timeline {
+  display: flex;
+  align-items: left;
+  color: #999;
+  font-size: 14px;
+  justify-content: center;
+  margin: 10px 0;
+  font-family: "IM Fell English", serif;
+}
+.date-timeline::before,
+.date-timeline::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes fadeInuser {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Status Element (for bot messages) */
+.status {
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Scam Status - Red */
+.scam {
+  border: 4px solid rgb(202, 1, 1);
+  color: rgb(255, 4, 4);
+}
+
+/* Safe Status - Green */
+.safe {
+  border: 4px solid rgb(2, 219, 2);
+  color: rgb(31, 148, 5);
+  text-shadow: #2b2b2b;
+}
+
+body.dark-mode {
+  background: linear-gradient(to bottom, rgb(16, 21, 36), rgb(23, 30, 54));
+  color: #ddd;
+}
+body.dark-mode .messagehead {
+  color: #ddd;
+}
+body.dark-mode .chat-container {
+  background: transparent;
+  border: none;
+}
+body.dark-mode .sent {
+  background-color: rgb(22, 31, 57);
+  color: #fff;
+}
+body.dark-mode .received {
+  background-color: transparent;
+  color: #fff;
+}
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #0b0b0b82;
+  color: #fff;
+}
+body.dark-mode .chat-input {
+  background: #0000009f;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .chat-input:hover {
+  box-shadow: 0px 4px 10px rgba(250, 248, 248, 0.3);
+}
+body.dark-mode .main-btn {
+  background: #ddd;
+  color: #000;  /* Changed to black */
+}
+body.dark-mode .btn1,
+body.dark-mode .btn2,
+body.dark-mode .btn3,
+body.dark-mode .btn4,
+body.dark-mode .btn5 {
+  background: #ddd;
+  color: #000;  /* Changed to black */
+}
+
+/* Update dark mode styles for collapsible menu */
+body.dark-mode .collapsible-btn {
+    background: #ddd;
+    color: #000;
+}
+
+body.dark-mode .main-btn {
+    background: #ddd;
+    color: #000;
+}
+
+body.dark-mode .menu-container.open .collapsible-btn {
+    background: #ddd;
+    color: #000;
+}
+
+/* Menu Container - Positioned at the top left */
+.menu-container {
+  position: fixed;
+  top: 1px;
+  left: 20px;
+  width: 60px;
+  height: auto;
+  z-index: 1000;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Main button style */
+.main-btn {
+  left: 1%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #040404;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  font-size: 30px;
+  outline: none;
+  transition: transform 0.3s, background 0.3s;
+}
+.main-btn:hover {
+  background: #383838;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.main-btn:active {
+  transform: scale(0.95);
+}
+
+    /* Collapsible buttons style */
+    .collapsible-btn {
+      width: 150px;
+      height: 50px;
+      border-radius: 3%;
+      background: #000000;
+     
+      border: none;
+      position: absolute;
+      top: 15px;
+      left: 5px;
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s ease;
+     
+    }
+    
+    .collapsible-btn:hover {
+      background: #2b2b2b;
+    }
+
+    
+    .collapsible-btn:hover {
+      background: #2b2b2b;
+    }
+
+.collapsible-btn:hover {
+  background: #2b2b2b;
+}
+
+/* When menu is open, show buttons vertically */
+.menu-container.open .collapsible-btn {
+  opacity: 1;
+  visibility: visible;
+  text-decoration: none;
+  color: white;
+}
+
+/* Vertical positions for each button */
+.btn1 { transform: translate(0, 70px); 
+  height: auto; 
+  text-decoration: none;
+  color: white;
+}
+.btn2 { transform: translate(0, 140px); 
+  height: auto;
+  text-decoration: none;
+  color: white;
+}
+.btn3 { transform: translate(0, 210px); 
+  height: auto;
+  text-decoration: none;
+  color: white;
+}
+.btn4 { transform: translate(0, 280px);
+  height: auto;
+  text-decoration: none;
+  color: white;
+}
+.btn5 { 
+  transform: translate(0, 350px);
+  height: auto;
+  text-decoration: none;
+  color: white;
+}
+
+/* Initially, buttons are hidden */
+.menu-container:not(.open) .collapsible-btn {
+  transform: translate(0, 0);
+}
+
+/* Add these responsive styles at the end of your file */
+
+/* For tablets and medium-sized screens */
+@media screen and (max-width: 768px) {
+  .messagehead {
+    font-size: 120%;
+    padding-right: 10px;
+    margin-top: 15px;
+  }
+
+  .chat-container {
+    height: 87vh;
+    width: 95%;
+    margin-top: 1.5%;
+  }
+
+  .chat-input {
+    width: 80%;
+    bottom: 15px;
+  }
+
+  .message {
+    max-width: 75%;
+  }
+
+  .message.received {
+    font-size: large;
+  }
+
+  .message.sent {
+    font-size: medium;
+  }
+
+  .status {
+    padding: 8px;
+  }
+
+  .report-button {
+    padding: 4px 10px;
+    font-size: 12px;
+    width: 120px;
+    margin-left: 15px;
+    text-align: center;
+  }
+
+  /* Adjust button spacing for mobile */
+  .btn1 { transform: translate(0, 60px); }
+  .btn2 { transform: translate(0, 110px); }
+  .btn3 { transform: translate(0, 160px); }
+  .btn4 { transform: translate(0, 210px); }
+  .btn5 { transform: translate(0, 260px); }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 480px) {
+  .messagehead {
+    font-size: 100%;
+    padding-right: 5px;
+    margin-top: 12px;
+  }
+
+  .chat-container {
+    height: 85vh;
+    width: 98%;
+    margin-top: 6%;
+  }
+
+  .chat-input {
+    width: 90%;
+    padding: 8px;
+    bottom: 10px;
+  }
+
+  .chat-input input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .message {
+    max-width: 85%;
+    padding: 8px;
+  }
+
+  .message.received {
+    font-size: medium;
+  }
+
+  .message.sent {
+    font-size: small;
+  }
+
+  .report-button {
+    padding: 4px 8px;
+    font-size: 11px;
+    width: 100px;
+    margin: 5px 0 5px 10px;
+    display: inline-block;
+    position: relative;
+    left: 0;
+    transform: none;
+  }
+
+  /* Adjust menu for mobile */
+  .menu-container {
+    left: 10px;
+  }
+
+  .main-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .collapsible-btn {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* Adjust button spacing for mobile */
+  .btn1 { transform: translate(0, 60px); }
+  .btn2 { transform: translate(0, 110px); }
+  .btn3 { transform: translate(0, 160px); }
+  .btn4 { transform: translate(0, 210px); }
+  .btn5 { transform: translate(0, 260px); }
+}
+
+/* For very small devices */
+@media screen and (max-width: 320px) {
+  .messagehead {
+    font-size: 90%;
+    margin-top: 10px;
+  }
+
+  .chat-input {
+    width: 95%;
+    padding: 6px;
+  }
+
+  .message {
+    max-width: 90%;
+    padding: 6px;
+  }
+
+  .status {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .chat-container {
+    height: 83vh;
+    margin-top: 8%;
+  }
+
+  .report-button {
+    padding: 3px 6px;
+    font-size: 10px;
+    width: 90px;
+    margin-left: 8px;
+  }
+}
+
+/* For landscape orientation */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .messagehead {
+    font-size: 90%;
+    margin-top: 8px;
+  }
+
+  .report-button {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    padding: 3px 8px;
+    font-size: 11px;
+    width: 100px;
+  }
+
+  .btn1 { transform: translate(70px, 0); }
+  .btn2 { transform: translate(200px, 0); }
+  .btn3 { transform: translate(330px, 0); }
+  .btn4 { transform: translate(460px, 0); }
+  .btn5 { transform: translate(590px, 0); }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1440px) {
+  .chat-container {
+    height: 90vh;
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  .chat-input {
+    max-width: 800px;
+  }
+
+  .message {
+    max-width: 50%;
+  }
+
+  .report-button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+}
+
+/* Dark mode adjustments for different screen sizes */
+@media screen and (max-width: 768px) {
+  body.dark-mode .chat-input {
+    width: 80%;
+  }
+}
+
+/* Fix for loading animation on smaller screens */
+@media screen and (max-width: 480px) {
+  .loading span {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .collapsible-btn,
+  .report-button,
+  .main-btn {
+    min-height: 35px;
+  }
+
+  .chat-input input {
+    min-height: 44px;
+  }
+
+  .report-button {
+    min-height: 35px;
+    padding: 8px 15px;
+  }
+}
