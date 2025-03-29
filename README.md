@@ -15,9 +15,9 @@
 
 AI Fake News & Scam Detector leverages cutting-edge AI technology to analyze online content in real-time. It quickly identifies potential fake news and scam attempts, ensuring you have accurate information at your fingertips.
 
-[![Visit](https://img.shields.io/badge/Visit-blue)](https://fakedetector.run.place)
 
-Explore it now: [Visit AI Fake News & Scam Detector](https://fakedetector.run.place)
+
+Explore it now: [![Visit](https://img.shields.io/badge/Visit-blue)](https://fakedetector.run.place)
 
 ---
 
